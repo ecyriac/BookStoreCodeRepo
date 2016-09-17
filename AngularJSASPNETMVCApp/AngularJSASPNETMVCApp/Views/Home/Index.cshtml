@@ -1,0 +1,54 @@
+﻿@model AngularJSASPNETMVCApp.ViewModels.IndexViewModel
+@{
+    ViewBag.Title = "Online Bookstore Kingdom Home Page";
+}
+
+<div class="page-header">
+    <h1>Online Bookstore Kingdom</h1>
+    <small>Eldhose Cyriac's Online Bookstore using AngularJS/ASP.NET MVC frameworks with bootstrap</small>
+</div>
+
+<div ng-controller="LandingPageController">
+    <form>
+        <div class="form-group">
+            <label for="bookTitle">Book Title: </label>
+            <input type="text" class="form-control" id="bookTitle" ng-model="models.bookTitle">
+        </div>
+        <div class="form-group">
+            <label for="isbn">ISBN: </label>
+            <input type="text" class="form-control" id="isbn" ng-model="models.bookIsbn">
+        </div>
+        <div class="form-group">
+            <label for="publisher">Publisher: </label>
+            <input type="text" class="form-control" id="publisher" ng-model="models.bookPublisher">
+        </div>
+        <div class="form-group">
+            <input type="button" class="btnAdd" value="Add Book" ng-click="AddBook()" />
+        </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+            <input type="text" class="form-control" placeholder="Search for Books" ng-model="models.searchBook">
+
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Isbn</th>
+                <th>Publisher</th>
+            </tr>
+        </thead>
+        <tr ng-repeat="book in Books.BooksArray  | filter:models.searchBook">
+            <td>{{ book.Title }}</td>
+            <td>{{ book.Isbn }}</td>
+            <td>{{ book.Publisher }}</td>
+        </tr>
+    </table>
+</form>
+</div>
+
