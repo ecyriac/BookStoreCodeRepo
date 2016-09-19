@@ -7,6 +7,7 @@ using System.Web;
 using AngularJSASPNETMVCApp.POCO;
 using System.Web.Mvc;
 using System.Data;
+using Utility;
 
 namespace AngularJSASPNETMVCApp.DAL
 {
@@ -19,7 +20,7 @@ namespace AngularJSASPNETMVCApp.DAL
             string queryString =
     "SELECT BookId, Created, Isbn, Title, Publisher, AuthorshipDetails from dbo.Book";
 
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["NorthwindConnectionString"].ToString()))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[ApplicationConstants.DatabaseConnectionStringName].ToString()))
             {
                 try
                 {
@@ -50,13 +51,13 @@ namespace AngularJSASPNETMVCApp.DAL
 
         public int AddBook(Book aNewBook)
         {
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["NorthwindConnectionString"].ToString()))
+            using (SqlConnection connection = new SqlConnection(ApplicationConstants.DatabaseConnectionStringName))
             {
                 try
                 {
                     connection.Open();
 
-                    SqlCommand cmd = new SqlCommand("dbo.InsertBook", connection);
+                    SqlCommand cmd = new SqlCommand(ApplicationConstants.InsertBookStoredProcedureName, connection);
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@Isbn", aNewBook.Isbn));

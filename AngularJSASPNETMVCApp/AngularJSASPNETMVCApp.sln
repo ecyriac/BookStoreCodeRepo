@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularJSASPNETMVCApp", "An
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularJSASPNETMVCApp.Tests", "AngularJSASPNETMVCApp.Tests\AngularJSASPNETMVCApp.Tests.csproj", "{AA1B6543-41C7-4022-9A75-28C46D46822A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{414FAF77-2ECA-4449-9B74-C745FFA92D5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AA1B6543-41C7-4022-9A75-28C46D46822A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA1B6543-41C7-4022-9A75-28C46D46822A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA1B6543-41C7-4022-9A75-28C46D46822A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{414FAF77-2ECA-4449-9B74-C745FFA92D5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{414FAF77-2ECA-4449-9B74-C745FFA92D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{414FAF77-2ECA-4449-9B74-C745FFA92D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{414FAF77-2ECA-4449-9B74-C745FFA92D5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
