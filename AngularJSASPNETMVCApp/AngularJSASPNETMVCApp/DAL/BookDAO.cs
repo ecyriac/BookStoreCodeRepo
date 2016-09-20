@@ -51,7 +51,7 @@ namespace AngularJSASPNETMVCApp.DAL
 
         public int AddBook(Book aNewBook)
         {
-            using (SqlConnection connection = new SqlConnection(ApplicationConstants.DatabaseConnectionStringName))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[ApplicationConstants.DatabaseConnectionStringName].ToString()))
             {
                 try
                 {

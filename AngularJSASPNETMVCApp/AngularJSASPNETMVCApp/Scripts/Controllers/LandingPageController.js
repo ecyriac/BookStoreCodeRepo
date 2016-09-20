@@ -21,7 +21,12 @@ var LandingPageController = function ($scope, $http) {
             data: JSON.stringify(aNewBook),
             dataType: "json"
         });
-        GetBooks($scope, $http);
+        
+        response.then(function (msg) {
+            GetBooks($scope, $http);
+        }, function () {
+            alert('Error in adding book');
+        });
         return response;
     } // end of AddBook
 
